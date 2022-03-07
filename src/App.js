@@ -4,8 +4,11 @@ import Search from "./Search";
 function App() {
   return (
     <div className="App">
-      <h1>Weather search app</h1>
+      <footer><h1>Weather search app</h1></footer>
+      <div className="TodaysForecast">
       <Search />
+      </div>
+      <footer><a href="https://github.com/ViktoriaAve/react-weather-app" target="_blank" rel="noreferrer">Open-source code</a></footer>
     </div>
   );
 }

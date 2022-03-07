@@ -43,6 +43,7 @@ export default function Search() {
     return (
       <div>
         {form}
+        <h2>{city}</h2>
         <ul>
           <li>Temperature: {Math.round(weather.temperature)}°C </li>
           <li>Description: {weather.description} </li>
