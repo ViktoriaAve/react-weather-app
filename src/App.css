@@ -1,5 +1,60 @@
 .App {
   text-align: center;
+  color: #969696;
+}
+p {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+ul {
+  padding-top: 15px;
+  list-style-type: none;
+}
+
+input {
+  padding: 5px 5px;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #aaaaaa;
+}
+
+.weather-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-search,
+.btn-current {
+  padding: 5px 30px;
+  margin: 1px;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 5px #aaaaaa;
+  color: white;
+}
+
+.btn-search {
+  background-color: #007bff;
+}
+
+.btn-current {
+  background-color: #28a745;
+}
+
+button:hover {
+  box-shadow: 2px 3px 5px #aaaaaa;
+  font-size: medium;
+  transition: 0.3s;
+}
+
+.btn-search:hover {
+  background-color: #005bff;
+}
+
+.btn-current:hover {
+  background-color: #208a39;
 }
 
 .App-header {
@@ -14,16 +69,29 @@
 }
 
 .TodaysForecast {
+  text-align: left;
   display: block;
   margin: auto;
-  max-width: fit-content;
+  max-width: 600px;
   padding: 40px;
-  background-color: rgb(248, 248, 248);
-  border: 1px solid rgb(121, 121, 121);
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px #aaaaaa;
 }
 
-ul {
-  list-style-type: none;
-  padding: 20px;
-  margin: 5px;
+.text-strong {
+  color: #686868;
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}
+
+.weatherForecast {
+  margin-top: 40px;
+  text-align: center;
+}
+.weatherForecast img {
+  width: 70px;
 }
