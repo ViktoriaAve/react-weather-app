@@ -5,11 +5,15 @@ import Search from "./Search";
 function App() {
   return (
     <div className="App">
-      <footer><h1>Weather search app</h1></footer>
       <div className="TodaysForecast">
       <Search />
       </div>
-      <footer><a href="https://github.com/ViktoriaAve/react-weather-app" target="_blank" rel="noreferrer">Open-source code</a></footer>
+      <footer>
+        <p>This app has {" "}
+          <a href="https://github.com/ViktoriaAve/react-weather-app" target="_blank" rel="noreferrer">open-source code</a>
+          , coded by Viktoria Averjanova
+        </p>
+        </footer>
     </div>
   );
 }

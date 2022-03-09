@@ -34,11 +34,6 @@ export default function Search() {
   }
 
 
- 
-
-
-
-
   let form = (
     <form onSubmit={handleSubmit}>
       <input
@@ -51,17 +46,23 @@ export default function Search() {
     </form>
   );
 
+
+
   if (result) {
     return (
       <div>
+        <Container>
         {form}
-        <p className="text-strong"> {weather.name}, {Math.round(weather.temperature)}°C</p>
+        <h1 className="text-strong"> {weather.name}</h1>
         <p>{weather.description}</p>
         
         <Container>
           <Row>
             <Col>
-          <img src={weather.icon} alt="Weather Icon" className="weather-icon" />
+            <p>
+          <img src={weather.icon} alt="Weather Icon" className="weather-icon-today" />
+          <span className="text-strong">{Math.round(weather.temperature)}</span> <span className="unit">°C</span>
+          </p>
         </Col>
         <Col>
         <ul>
@@ -77,29 +78,35 @@ export default function Search() {
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
+              <p>10°</p>
              <p>{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
+              <p>10°</p>
              <p>{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
+              <p>10°</p>
              <p>{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
+              <p>10°</p>
              <p>{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
+              <p>10°</p>
              <p>{weather.description}</p>
             </Col>
           </Row>
+        </Container>
         </Container>
       </div>
     );
