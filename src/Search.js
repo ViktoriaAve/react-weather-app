@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 
 export default function Search() {
   let [city, setCity] = useState(" ");
@@ -13,6 +15,7 @@ export default function Search() {
     setResult(true);
     setWeather({
       name: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
@@ -54,7 +57,9 @@ export default function Search() {
         <Container>
         {form}
         <h1 className="text-strong"> {weather.name}</h1>
-        <p>{weather.description}</p>
+        <p className="text-capitalize"> {weather.description}</p>
+        <FormattedDate date={weather.date} />
+         
         
         <Container>
           <Row>
@@ -79,31 +84,31 @@ export default function Search() {
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
               <p>10°</p>
-             <p>{weather.description}</p>
+             <p className="text-capitalize">{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
               <p>10°</p>
-             <p>{weather.description}</p>
+             <p className="text-capitalize">{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
               <p>10°</p>
-             <p>{weather.description}</p>
+             <p className="text-capitalize">{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
               <p>10°</p>
-             <p>{weather.description}</p>
+             <p className="text-capitalize">{weather.description}</p>
             </Col>
             <Col>
               <p>Mon</p>
               <img src={weather.icon} alt="Weather Icon" />
               <p>10°</p>
-             <p>{weather.description}</p>
+             <p className="text-capitalize">{weather.description}</p>
             </Col>
           </Row>
         </Container>
