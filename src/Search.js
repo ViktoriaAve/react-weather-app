@@ -12,7 +12,6 @@ export default function Search() {
   let [weather, setWeather] = useState(" ");
 
   function showWeather(response) {
-    setResult(true);
     setWeather({
       name: response.data.name,
       date: new Date(response.data.dt * 1000),
@@ -20,9 +19,9 @@ export default function Search() {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-    console.log(response.data.name);
+    setResult(true);
   }
 
   function handleSubmit(event) {
@@ -57,8 +56,7 @@ export default function Search() {
         <Container>
         {form}
         <h1 className="text-strong"> {weather.name}</h1>
-        <p className="text-capitalize"> {weather.description}</p>
-        <FormattedDate date={weather.date} />
+        <p className="text-capitalize"> <FormattedDate date={weather.date} /> {weather.description}</p>
          
         
         <Container>
