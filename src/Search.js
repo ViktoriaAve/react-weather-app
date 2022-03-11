@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import WeatherInfo from "./WeatherInfo";
+
 
 
 export default function Search() {
@@ -53,64 +51,10 @@ export default function Search() {
   if (result) {
     return (
       <div>
-        <Container>
         {form}
-        <h1 className="text-strong"> {weather.name}</h1>
-        <p className="text-capitalize"> <FormattedDate date={weather.date} /> {weather.description}</p>
-         
-        
-        <Container>
-          <Row>
-            <Col>
-            <p>
-          <img src={weather.icon} alt="Weather Icon" className="weather-icon-today" />
-          <span className="text-strong">{Math.round(weather.temperature)}</span> <span className="unit">°C</span>
-          </p>
-        </Col>
-        <Col>
-        <ul>
-          <li>Humidity: {weather.humidity}% </li>
-          <li>Wind: {weather.wind}km/h </li>
-        </ul>
-        </Col>
-        </Row>
-        </Container>
 
-        <Container className="weatherForecast">
-          <Row>
-            <Col>
-              <p>Mon</p>
-              <img src={weather.icon} alt="Weather Icon" />
-              <p>10°</p>
-             <p className="text-capitalize">{weather.description}</p>
-            </Col>
-            <Col>
-              <p>Mon</p>
-              <img src={weather.icon} alt="Weather Icon" />
-              <p>10°</p>
-             <p className="text-capitalize">{weather.description}</p>
-            </Col>
-            <Col>
-              <p>Mon</p>
-              <img src={weather.icon} alt="Weather Icon" />
-              <p>10°</p>
-             <p className="text-capitalize">{weather.description}</p>
-            </Col>
-            <Col>
-              <p>Mon</p>
-              <img src={weather.icon} alt="Weather Icon" />
-              <p>10°</p>
-             <p className="text-capitalize">{weather.description}</p>
-            </Col>
-            <Col>
-              <p>Mon</p>
-              <img src={weather.icon} alt="Weather Icon" />
-              <p>10°</p>
-             <p className="text-capitalize">{weather.description}</p>
-            </Col>
-          </Row>
-        </Container>
-        </Container>
+        <WeatherInfo data={weather}/>
+     
       </div>
     );
   } else {
