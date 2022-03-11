@@ -15,7 +15,7 @@ export default function WeatherInfo(props) {
          
         <Container>
           <Row>
-            <Col class="col-7">
+            <Col className="col-7">
             <p>
           <img src={props.data.icon} alt="Weather Icon" className="weather-icon-today" />
           <WeatherTemperature celsius={props.data.temperature}/>
