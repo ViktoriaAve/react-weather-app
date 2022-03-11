@@ -3,7 +3,6 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 
 
-
 export default function Search() {
   let [city, setCity] = useState(" ");
   let [result, setResult] = useState(false);
@@ -45,8 +44,6 @@ export default function Search() {
       <button type="submit" className="btn-current"> Current </button>
     </form>
   );
-
-
 
   if (result) {
     return (

@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,15 +10,15 @@ export default function WeatherInfo(props) {
     return (
     <div className="WeatherInfo">
         <Container>
-        <h1 className="text-strong"> {props.data.name}</h1>
+        <h1 className="text-strong">{props.data.name}</h1>
         <p className="text-capitalize"> <FormattedDate date={props.data.date} /> {props.data.description}</p>
          
         <Container>
           <Row>
-            <Col>
+            <Col class="col-7">
             <p>
           <img src={props.data.icon} alt="Weather Icon" className="weather-icon-today" />
-          <span className="text-strong">{Math.round(props.data.temperature)}</span> <span className="unit">°C</span>
+          <WeatherTemperature celsius={props.data.temperature}/>
           </p>
         </Col>
         <Col>
@@ -32,7 +33,7 @@ export default function WeatherInfo(props) {
         <Container className="weatherForecast">
           <Row>
             <Col>
-              <p>Mon</p>
+              <p> Mon </p>
               <img src={props.data.icon} alt="Weather Icon" />
               <p>10°</p>
              <p className="text-capitalize">{props.data.description}</p>
