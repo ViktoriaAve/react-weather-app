@@ -29,18 +29,6 @@ export default function WeatherInfo(props) {
         </Col>
         </Row>
         </Container>
-
-        <Container className="weatherForecast">
-          <Row>
-            <Col>
-              <p> Mon </p>
-              <img src={props.data.icon} alt="Weather Icon" />
-              <p>10°</p>
-             <p className="text-capitalize">{props.data.description}</p>
-            </Col>
-            
-          </Row>
-        </Container>
         </Container>
     </div>
     );
