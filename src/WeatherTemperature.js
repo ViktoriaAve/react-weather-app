@@ -13,7 +13,7 @@ function convertToCelsius(event) {
     setUnit("celsius");
 }
 
-if (unit == "celsius") {
+if (unit === "celsius") {
     return (
         <span>
         <span className="text-strong">
