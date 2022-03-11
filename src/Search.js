@@ -3,7 +3,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 
 
-export default function Search() {
+export default function Search(props) {
   let [city, setCity] = useState(" ");
   let [result, setResult] = useState(false);
   let [weather, setWeather] = useState(" ");
@@ -23,9 +23,7 @@ export default function Search() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "64f878d6a084c5e79fb3337a46b640d8";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(url).then(showWeather);
+    
   }
 
   function updateCity(event) {
@@ -55,6 +53,10 @@ export default function Search() {
       </div>
     );
   } else {
+    let apiKey = "64f878d6a084c5e79fb3337a46b640d8";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(showWeather);
+
     return form;
   }
 }
