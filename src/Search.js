@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-
+import WeatherForecast from "./WeatherForecast";
 
 export default function Search(props) {
   let [city, setCity] = useState(" ");
@@ -11,12 +11,13 @@ export default function Search(props) {
   function showWeather(response) {
     setWeather({
       name: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
     setResult(true);
   }
@@ -51,9 +52,8 @@ export default function Search(props) {
     return (
       <div>
         {form}
-
         <WeatherInfo data={weather}/>
-     
+        <WeatherForecast data={weather}/>
       </div>
     );
   } else {
