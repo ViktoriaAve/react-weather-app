@@ -33,7 +33,6 @@ export default function Search(props) {
 
   function updateCity(event) {
     setCity(event.target.value);
-    console.log(city);
   }
 
   function showCurrentweather(event) {

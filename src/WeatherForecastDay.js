@@ -40,7 +40,7 @@ function day() {
             </div>
             <div className="WeatherForecast-temp">
               <span className="WeatherForecast-temp-max">{maxTemp()}</span>
-              <span className="WeatherForecast-temp-min">{minTemp()}</span>
+              <span className="WeatherForecast-temp-min d-none d-sm-block">{minTemp()}</span>
             </div>
     </div>
     );
