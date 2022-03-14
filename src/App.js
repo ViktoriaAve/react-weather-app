@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="TodaysForecast">
-      <Search />
+      <Search defaultCity="London"/>
       </div>
       <footer>
         <p>This app has {" "}

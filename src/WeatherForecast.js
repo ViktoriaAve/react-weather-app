@@ -19,7 +19,6 @@ function handleResponse(response) {
   }
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="WeatherForecast">
         <div className="row">
